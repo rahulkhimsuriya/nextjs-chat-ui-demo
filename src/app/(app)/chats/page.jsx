@@ -43,9 +43,322 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
+const chats = [
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content: "Hi Rahul, how are you doing today?",
+    time: "10:00 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content: "Hey! I'm doing well, thanks for asking. What about you?",
+    time: "10:02 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content:
+      "I'm doing great! Just working on a new project. What are you up to?",
+    time: "10:05 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content:
+      "That's awesome! I'm actually working on a new project as well. It's keeping me busy but I'm excited about it.",
+    time: "10:07 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content: "Oh cool! What kind of project is it?",
+    time: "10:10 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content: "It's a mobile app for...",
+    time: "10:12 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content: "Hi Rahul, how are you doing today?",
+    time: "10:00 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content: "Hey! I'm doing well, thanks for asking. What about you?",
+    time: "10:02 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content:
+      "I'm doing great! Just working on a new project. What are you up to?",
+    time: "10:05 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content:
+      "That's awesome! I'm actually working on a new project as well. It's keeping me busy but I'm excited about it.",
+    time: "10:07 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content: "Oh cool! What kind of project is it?",
+    time: "10:10 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content: "It's a mobile app for...",
+    time: "10:12 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content: "Hi Rahul, how are you doing today?",
+    time: "10:00 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content: "Hey! I'm doing well, thanks for asking. What about you?",
+    time: "10:02 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content:
+      "I'm doing great! Just working on a new project. What are you up to?",
+    time: "10:05 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content:
+      "That's awesome! I'm actually working on a new project as well. It's keeping me busy but I'm excited about it.",
+    time: "10:07 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content: "Oh cool! What kind of project is it?",
+    time: "10:10 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content: "It's a mobile app for...",
+    time: "10:12 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content: "Hi Rahul, how are you doing today?",
+    time: "10:00 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content: "Hey! I'm doing well, thanks for asking. What about you?",
+    time: "10:02 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content:
+      "I'm doing great! Just working on a new project. What are you up to?",
+    time: "10:05 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content:
+      "That's awesome! I'm actually working on a new project as well. It's keeping me busy but I'm excited about it.",
+    time: "10:07 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content: "Oh cool! What kind of project is it?",
+    time: "10:10 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content: "It's a mobile app for...",
+    time: "10:12 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content: "Hi Rahul, how are you doing today?",
+    time: "10:00 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content: "Hey! I'm doing well, thanks for asking. What about you?",
+    time: "10:02 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content:
+      "I'm doing great! Just working on a new project. What are you up to?",
+    time: "10:05 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content:
+      "That's awesome! I'm actually working on a new project as well. It's keeping me busy but I'm excited about it.",
+    time: "10:07 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100",
+      id: "b8f32c1a-3d2c-4423-a987-84ac25e7c12f",
+      name: "You",
+    },
+    content: "Oh cool! What kind of project is it?",
+    time: "10:10 AM",
+  },
+  {
+    sender: {
+      image:
+        "https://images.unsplash.com/photo-1570295994088-f6d5e70dfd4a?q=80&w=100&h=100",
+      id: "2e4baf1c-72d3-4f2b-b9d8-a7874521b123",
+      name: "Rahul",
+    },
+    content: "It's a mobile app for...",
+    time: "10:12 AM",
+  },
+];
+
 export default function Chats() {
   return (
-    <div className="flex min-h-screen w-full">
+    <div className="flex h-screen w-full">
       <aside className="inset-y-0 left-0 z-10 hidden md:w-1/3 lg:w-1/4 max-w-sm flex-col border-r md:flex">
         <nav className="flex flex-col gap-4 px-2 lg:px-4 sm:py-4">
           <div className="mt-4 flex items-center justify-between">
@@ -170,7 +483,7 @@ export default function Chats() {
       </aside>
 
       <div className="flex flex-1 flex-col md:w-2/3 lg:w-3/4 max-w-full">
-        <header className="sticky top-0 z-30 flex h-14 items-center justify-between gap-4 border-b bg-background px-4 md:static md:h-auto md:border-0 md:bg-transparent md:px-6">
+        <header className="top-0 z-30 flex h-14 items-center justify-between gap-4 border-b bg-background px-4 md:static md:h-auto md:border-0 md:bg-transparent md:px-6">
           <Sheet>
             <SheetTrigger asChild>
               <Button size="icon" variant="outline" className="md:hidden">
@@ -278,10 +591,10 @@ export default function Chats() {
             </DropdownMenu>
           </div>
         </header>
-        <main className="flex-1 w-full">
-          <div className="flex flex-1 min-h-full flex-col w-full">
-            <div className="h-20">
-              <Card className="rounded-none h-full px-4">
+        <main className="inset-y-0 right-0-0 flex-1 w-full max-h-[94vh] md:max-h-screen">
+          <div className="flex flex-1 flex-col w-full h-full">
+            <div className="h-16">
+              <Card className="rounded-none border-l-transparent h-full px-4 py-2">
                 <CardContent className="h-full p-0 flex items-center justify-between">
                   <div className="flex items-center">
                     <div className="flex">
@@ -339,9 +652,38 @@ export default function Chats() {
                 </CardContent>
               </Card>
             </div>
-            <div className="flex-1"></div>
+
+            <div className="flex-1 px-4 lg:px-8 space-y-4 py-4 overflow-auto">
+              {chats.map((chat, idx) => (
+                <div key={idx}>
+                  <div className="flex">
+                    <div className="flex items-end">
+                      <Image
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100"
+                        width={48}
+                        height={48}
+                        alt="Avatar"
+                        className="overflow-hidden rounded-full w-6 h-6 object-cover object-center"
+                      />
+                    </div>
+                    <div className="ml-2">
+                      <Card className="flex items-center">
+                        <CardContent className="p-2">
+                          {chat.content}
+                        </CardContent>
+                      </Card>
+
+                      <span className="text-xs text-muted-foreground">
+                        {chat.time}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
             <div className="mt-auto h-16">
-              <Card className="rounded-none h-full">
+              <Card className="rounded-none border-l-transparent h-full">
                 <CardContent className="h-full p-0 flex items-center">
                   <div className="px-4 space-x-2 w-full flex items-center justify-center">
                     <Button variant="outline">
