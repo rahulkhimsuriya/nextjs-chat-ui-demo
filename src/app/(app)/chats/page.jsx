@@ -101,7 +101,7 @@ export default function Chats() {
             })}
           </div>
         </nav>
-        <nav className="mt-auto w-full flex justify-between gap-4 px-2 sm:py-4">
+        <nav className="mt-auto w-full flex items-center justify-between gap-4 px-2 sm:py-4">
           <div className="flex flex-1">
             <div className="flex">
               <Image
@@ -163,9 +163,9 @@ export default function Chats() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="flex flex-col md:max-w-xs">
+            <SheetContent side="left" className="flex flex-col md:max-w-xs p-2">
               <nav className="flex flex-col gap-4 px-2 lg:px-4 sm:py-4">
-                <div className="mt-4 flex items-center justify-between">
+                <div className="mt-6 flex items-center justify-between">
                   <div>
                     <Link
                       href="#"
@@ -183,7 +183,7 @@ export default function Chats() {
                   </div>
                 </div>
 
-                <div className="mt-2">
+                <div className="mt-1">
                   <Separator />
                 </div>
 
@@ -197,9 +197,9 @@ export default function Chats() {
                 </div>
               </nav>
 
-              <nav className="flex-1 h-max whitespace-nowrap rounded-md border w-full overflow-auto">
-                <div className="mt-2 flex flex-col h-max space-y-0.5 px-4 py-1">
-                  {Array.from({ length: 10 }).map((_, idx) => {
+              <nav className="flex-1 h-max w-full overflow-auto">
+                <div className="mt-1 flex flex-col h-max space-y-0.5 px-2 py-1">
+                  {Array.from({ length: 100 }).map((_, idx) => {
                     const isActiveChat = parseInt(idx) <= 1;
                     return (
                       <div
