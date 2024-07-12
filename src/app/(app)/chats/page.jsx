@@ -27,6 +27,14 @@ import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function Chats() {
   return (
@@ -62,7 +70,7 @@ export default function Chats() {
             />
           </div>
         </nav>
-        <nav className="flex-1 h-max whitespace-nowrap rounded-md border w-full overflow-auto">
+        <nav className="flex-1 h-max border-t border-b w-full overflow-auto">
           <div className="mt-2 flex flex-col h-max space-y-0.5 px-4 py-1">
             {Array.from({ length: 10 }).map((_, idx) => {
               const isActiveChat = parseInt(idx) <= 1;
@@ -154,7 +162,7 @@ export default function Chats() {
         </nav>
       </aside>
 
-      <div className="flex flex-col md:gap-4 md:py-4 md:pl-14">
+      <div className="flex flex-1 flex-col md:gap-4 md:py-4 md:pl-14">
         <header className="sticky top-0 z-30 flex h-14 items-center justify-between gap-4 border-b bg-background px-4 md:static md:h-auto md:border-0 md:bg-transparent md:px-6">
           <Sheet>
             <SheetTrigger asChild>
@@ -263,7 +271,7 @@ export default function Chats() {
             </DropdownMenu>
           </div>
         </header>
-        <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 xl:grid-cols-3"></main>
+        <main className="flex-1 md:ml-[230px] lg:ml-[300px]"></main>
       </div>
     </div>
   );
