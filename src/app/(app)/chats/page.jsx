@@ -22,6 +22,13 @@ import {
   Home,
   Plus,
   Settings,
+  Paperclip,
+  Send,
+  InfoIcon,
+  EllipsisVertical,
+  Archive,
+  MicOff,
+  Trash2,
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -38,8 +45,8 @@ import {
 
 export default function Chats() {
   return (
-    <div className="flex min-h-screen w-full flex-col ">
-      <aside className="fixed inset-y-0 left-0 z-10 hidden md:w-[280px] lg:w-[380px] flex-col border-r md:flex">
+    <div className="flex min-h-screen w-full">
+      <aside className="inset-y-0 left-0 z-10 hidden md:w-1/3 lg:w-1/4 max-w-sm flex-col border-r md:flex">
         <nav className="flex flex-col gap-4 px-2 lg:px-4 sm:py-4">
           <div className="mt-4 flex items-center justify-between">
             <div>
@@ -109,7 +116,7 @@ export default function Chats() {
             })}
           </div>
         </nav>
-        <nav className="mt-auto w-full flex items-center justify-between gap-4 px-2 sm:py-4">
+        <nav className="mt-auto h-16 w-full flex items-center justify-between gap-4 px-2 sm:py-4">
           <div className="flex flex-1">
             <div className="flex">
               <Image
@@ -162,7 +169,7 @@ export default function Chats() {
         </nav>
       </aside>
 
-      <div className="flex flex-1 flex-col md:gap-4 md:py-4 md:pl-14">
+      <div className="flex flex-1 flex-col md:w-2/3 lg:w-3/4 max-w-full">
         <header className="sticky top-0 z-30 flex h-14 items-center justify-between gap-4 border-b bg-background px-4 md:static md:h-auto md:border-0 md:bg-transparent md:px-6">
           <Sheet>
             <SheetTrigger asChild>
@@ -271,7 +278,85 @@ export default function Chats() {
             </DropdownMenu>
           </div>
         </header>
-        <main className="flex-1 md:ml-[230px] lg:ml-[300px]"></main>
+        <main className="flex-1 w-full">
+          <div className="flex flex-1 min-h-full flex-col w-full">
+            <div className="h-20">
+              <Card className="rounded-none h-full px-4">
+                <CardContent className="h-full p-0 flex items-center justify-between">
+                  <div className="flex items-center">
+                    <div className="flex">
+                      <Image
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100"
+                        width={48}
+                        height={48}
+                        alt="Avatar"
+                        className="overflow-hidden rounded-full w-12 h-12 object-cover object-center"
+                      />
+                    </div>
+                    <div className="ml-2">
+                      <h1 className="text-base leading-tight">
+                        Rahul Khimsuriya
+                      </h1>
+                      <span className="text-xs leading-tight">Online</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <Button variant="ghost">
+                      <InfoIcon className="h-4 w-4" />
+                    </Button>
+
+                    <DropdownMenu>
+                      <DropdownMenuTrigger asChild>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="overflow-hidden rounded-full"
+                        >
+                          <EllipsisVertical className="h-5 w-5" />
+                          <span className="sr-only">More details</span>
+                        </Button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent
+                        className="text-foreground"
+                        align="end"
+                      >
+                        <DropdownMenuItem>
+                          <Archive className="h-4 w-4 mr-2" />
+                          Archive
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <MicOff className="h-4 w-4 mr-2" />
+                          Muted
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                          <Trash2 className="h-4 w-4 mr-2" />
+                          Delete
+                        </DropdownMenuItem>
+                      </DropdownMenuContent>
+                    </DropdownMenu>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="flex-1"></div>
+            <div className="mt-auto h-16">
+              <Card className="rounded-none h-full">
+                <CardContent className="h-full p-0 flex items-center">
+                  <div className="px-4 space-x-2 w-full flex items-center justify-center">
+                    <Button variant="outline">
+                      <Paperclip className="h-4 w-4" />
+                    </Button>
+                    <Input className="flex-1" />
+                    <Button>
+                      <Send className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   );
