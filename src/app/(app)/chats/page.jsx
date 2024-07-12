@@ -155,7 +155,7 @@ export default function Chats() {
       </aside>
 
       <div className="flex flex-col md:gap-4 md:py-4 md:pl-14">
-        <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 md:static md:h-auto md:border-0 md:bg-transparent md:px-6">
+        <header className="sticky top-0 z-30 flex h-14 items-center justify-between gap-4 border-b bg-background px-4 md:static md:h-auto md:border-0 md:bg-transparent md:px-6">
           <Sheet>
             <SheetTrigger asChild>
               <Button size="icon" variant="outline" className="md:hidden">
@@ -179,28 +179,6 @@ export default function Chats() {
                   <div className="flex items-center space-x-2">
                     <div>
                       <Plus className="h-4 w-4 text-muted-foreground" />
-                    </div>
-
-                    <div>
-                      <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                          <Image
-                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100"
-                            width={48}
-                            height={48}
-                            alt="Avatar"
-                            className="overflow-hidden rounded-full w-12 h-12 object-cover object-center cursor-pointer"
-                          />
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                          <DropdownMenuSeparator />
-                          <DropdownMenuItem>Settings</DropdownMenuItem>
-                          <DropdownMenuItem>Support</DropdownMenuItem>
-                          <DropdownMenuSeparator />
-                          <DropdownMenuItem>Logout</DropdownMenuItem>
-                        </DropdownMenuContent>
-                      </DropdownMenu>
                     </div>
                   </div>
                 </div>
@@ -262,6 +240,28 @@ export default function Chats() {
               </nav>
             </SheetContent>
           </Sheet>
+
+          <div className="md:hidden">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Image
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100"
+                  width={48}
+                  height={48}
+                  alt="Avatar"
+                  className="overflow-hidden rounded-full w-8 h-8 object-cover object-center cursor-pointer"
+                />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Settings</DropdownMenuItem>
+                <DropdownMenuItem>Support</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Logout</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </header>
         <main className="grid flex-1 items-start gap-4 p-4 sm:px-6 sm:py-0 md:gap-8 lg:grid-cols-3 xl:grid-cols-3"></main>
       </div>
