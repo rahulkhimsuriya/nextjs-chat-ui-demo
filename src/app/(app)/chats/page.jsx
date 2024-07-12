@@ -625,9 +625,9 @@ export default function Chats() {
   return (
     <div className="flex h-screen w-full">
       <aside className="inset-y-0 left-0 z-10 hidden md:w-1/3 lg:w-1/4 max-w-sm flex-col border-r md:flex">
-        <nav className="flex flex-col gap-4 px-2 lg:px-4 sm:py-4">
-          <div className="mt-4 flex items-center justify-between">
-            <div>
+        <nav className="flex flex-col gap-4 px-2 lg:px-4 sm:py-4x">
+          <div className="mt-4x flex items-center justify-between border-b">
+            <div className="flex items-center py-3">
               <Link
                 href="#"
                 className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
@@ -642,10 +642,6 @@ export default function Chats() {
             </div>
           </div>
 
-          <div className="mt-2">
-            <Separator />
-          </div>
-
           <div className="mt-2 relative flex-1">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
@@ -655,7 +651,7 @@ export default function Chats() {
             />
           </div>
         </nav>
-        <nav className="flex-1 h-max border-t border-b w-full overflow-auto">
+        <nav className="mt-4 flex-1 h-max border-t border-b w-full overflow-auto">
           <div className="mt-2 flex flex-col h-max space-y-0.5 px-2 lg:px-4 py-1">
             {users.slice(1).map((user, idx) => {
               const isActiveChat = parseInt(idx) == 0;
