@@ -39,7 +39,7 @@ export default function Chats() {
                 href="#"
                 className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
               >
-                <Package2 className="h-6 w-6 transition-all group-hover:scale-110" />
+                <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
                 <span className="sr-only">Acme Inc</span>
               </Link>
             </div>
@@ -62,9 +62,9 @@ export default function Chats() {
             />
           </div>
         </nav>
-        <div className="flex-1 h-max whitespace-nowrap rounded-md border w-full overflow-auto">
+        <nav className="flex-1 h-max whitespace-nowrap rounded-md border w-full overflow-auto">
           <div className="mt-2 flex flex-col h-max space-y-0.5 px-4 py-1">
-            {Array.from({ length: 100 }).map((_, idx) => {
+            {Array.from({ length: 10 }).map((_, idx) => {
               const isActiveChat = parseInt(idx) <= 1;
               return (
                 <div
@@ -100,7 +100,7 @@ export default function Chats() {
               );
             })}
           </div>
-        </div>
+        </nav>
         <nav className="mt-auto w-full flex justify-between gap-4 px-2 sm:py-4">
           <div className="flex flex-1">
             <div className="flex">
@@ -163,50 +163,102 @@ export default function Chats() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="md:max-w-xs">
-              <nav className="grid gap-6 text-lg font-medium">
-                <Link
-                  href="#"
-                  className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
-                >
-                  <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
-                  <span className="sr-only">Acme Inc</span>
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                >
-                  <Home className="h-5 w-5" />
-                  Dashboard
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-foreground"
-                >
-                  <ShoppingCart className="h-5 w-5" />
-                  Orders
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                >
-                  <Package className="h-5 w-5" />
-                  Products
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                >
-                  <Users2 className="h-5 w-5" />
-                  Customers
-                </Link>
-                <Link
-                  href="#"
-                  className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
-                >
-                  <LineChart className="h-5 w-5" />
-                  Settings
-                </Link>
+            <SheetContent side="left" className="flex flex-col md:max-w-xs">
+              <nav className="flex flex-col gap-4 px-2 lg:px-4 sm:py-4">
+                <div className="mt-4 flex items-center justify-between">
+                  <div>
+                    <Link
+                      href="#"
+                      className="group flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:text-base"
+                    >
+                      <Package2 className="h-5 w-5 transition-all group-hover:scale-110" />
+                      <span className="sr-only">Acme Inc</span>
+                    </Link>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <div>
+                      <Plus className="h-4 w-4 text-muted-foreground" />
+                    </div>
+
+                    <div>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Image
+                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100"
+                            width={48}
+                            height={48}
+                            alt="Avatar"
+                            className="overflow-hidden rounded-full w-12 h-12 object-cover object-center cursor-pointer"
+                          />
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end">
+                          <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                          <DropdownMenuSeparator />
+                          <DropdownMenuItem>Settings</DropdownMenuItem>
+                          <DropdownMenuItem>Support</DropdownMenuItem>
+                          <DropdownMenuSeparator />
+                          <DropdownMenuItem>Logout</DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-2">
+                  <Separator />
+                </div>
+
+                <div className="mt-2 relative flex-1">
+                  <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    type="search"
+                    placeholder="Search..."
+                    className="w-full rounded-lg bg-background pl-8"
+                  />
+                </div>
+              </nav>
+
+              <nav className="flex-1 h-max whitespace-nowrap rounded-md border w-full overflow-auto">
+                <div className="mt-2 flex flex-col h-max space-y-0.5 px-4 py-1">
+                  {Array.from({ length: 10 }).map((_, idx) => {
+                    const isActiveChat = parseInt(idx) <= 1;
+                    return (
+                      <div
+                        className={cn(
+                          "w-full flex px-4 py-2 rounded",
+                          isActiveChat && "bg-secondary"
+                        )}
+                        key={idx}
+                      >
+                        <div className="w-full flex">
+                          <div className="flex-shrink-0">
+                            <Image
+                              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&h=100"
+                              width={48}
+                              height={48}
+                              alt="Avatar"
+                              className="overflow-hidden rounded-full w-10 h-10 object-cover object-center"
+                            />
+                          </div>
+                          <div className={cn("ml-2 overflow-hidden")}>
+                            <p className="block text-sm truncate">
+                              Rahul Khimsuriya
+                            </p>
+                            <span
+                              className={cn(
+                                "truncate text-primary/50 block w-full text-xs"
+                              )}
+                            >
+                              Lorem ipsum dolor, sit amet consectetur
+                              adipisicing elit.
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </nav>
             </SheetContent>
           </Sheet>
