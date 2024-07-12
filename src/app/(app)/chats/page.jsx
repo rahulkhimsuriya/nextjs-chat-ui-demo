@@ -658,8 +658,8 @@ export default function Chats() {
               return (
                 <div
                   className={cn(
-                    "w-full flex px-4 py-2 rounded",
-                    isActiveChat && "bg-secondary"
+                    "w-full flex px-4 py-2 rounded cursor-pointer transition-all duration-300 ease-in-out  hover:bg-zinc-300 lg:hover:translate-x-1",
+                    isActiveChat && "bg-zinc-300"
                   )}
                   key={idx}
                 >
@@ -721,13 +721,6 @@ export default function Chats() {
                   <Settings className="h-5 w-5" />
                   <span className="sr-only">Settings</span>
                 </Button>
-                {/* <Link
-                href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
-              >
-                <Settings className="h-5 w-5" />
-                <span className="sr-only">Settings</span>
-              </Link> */}
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -792,8 +785,8 @@ export default function Chats() {
                     return (
                       <div
                         className={cn(
-                          "w-full flex px-4 py-2 rounded",
-                          isActiveChat && "bg-secondary"
+                          "w-full flex px-4 py-2 rounded cursor-pointer transition-all duration-300 ease-in-out  hover:bg-zinc-300 lg:hover:translate-x-1",
+                          isActiveChat && "bg-zinc-300"
                         )}
                         key={idx}
                       >
